@@ -4,6 +4,9 @@ const app = express();
 
 app.use(helmet());
 
+// Hide the X-Powered-By header
+app.use(helmet.hidePoweredBy());
+
 module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
